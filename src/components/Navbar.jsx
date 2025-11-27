@@ -26,9 +26,8 @@ export default function Navbar() {
             <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
-        <div className={styles.line}></div>
+        {/* <div className={styles.line}></div> */}
+       
 
         {!accessToken && (
           <>
