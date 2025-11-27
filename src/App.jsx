@@ -12,6 +12,7 @@ import Register from "./pages/auth/Register";
 import Dashboard from "./pages/Dashboard";
 import Cookies from "js-cookie";
 import { RequireAuth } from "./components/auth/RequireAuth";
+import { Home } from "./pages/Home";
 
 function App() {
   const accessToken = Cookies.get("accessToken");
@@ -19,7 +20,7 @@ function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
-        <Route index element={<h2>Home Page</h2>} />
+        <Route index element={<Home />} />
         <Route path="auth">
           <Route
             path="login"
