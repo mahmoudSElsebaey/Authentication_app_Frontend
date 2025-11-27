@@ -26,16 +26,30 @@ export default function Navbar() {
             <Link to="/dashboard">Dashboard</Link>
           </li>
         </ul>
-        <div className={styles.line}></div>
+        {/* <div className={styles.line}></div> */}
 
         {!accessToken && (
           <>
-            <Link to="/auth/login">login</Link>
-            <Link to="/auth/register">register</Link>
+            <Link
+              to="/auth/login"
+              className={`${styles.loginBtn} ${styles.linkBtn}`}
+            >
+              login
+            </Link>
+            <Link
+              to="/auth/register"
+              className={`${styles.registerBtn} ${styles.linkBtn}`}
+            >
+              register
+            </Link>
           </>
         )}
         {accessToken && (
-          <button type="button" onClick={handleLogout}>
+          <button
+            type="button"
+            onClick={handleLogout}
+            className={`${styles.logoutBtn} ${styles.linkBtn}`}
+          >
             Logout
           </button>
         )}
