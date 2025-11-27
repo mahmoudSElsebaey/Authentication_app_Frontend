@@ -15,7 +15,7 @@ import { RequireAuth } from "./components/auth/RequireAuth";
 import { Home } from "./pages/Home";
 
 function App() {
-  const accessToken = Cookies.get("accessToken");
+  const accessToken = Cookies.get("accessToken") || null;
 
   const router = createBrowserRouter(
     createRoutesFromElements(
