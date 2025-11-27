@@ -4,7 +4,8 @@ import react from '@vitejs/plugin-react-swc'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server:{
+  base: '/Authentication_app_Frontend/', // <-- مهم جدًا للنشر على GitHub Pages
+  server: {
     port: 3000
   }
 })
