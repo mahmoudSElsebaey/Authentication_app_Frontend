@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 // import Cookies from "js-cookie";
 import { RequireAuth } from "./components/auth/RequireAuth";
 import { Home } from "./pages/Home";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   // const accessToken = Cookies.get("accessToken") || null;
@@ -32,6 +33,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
     )
   );
