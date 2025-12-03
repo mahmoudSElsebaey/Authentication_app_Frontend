@@ -2,8 +2,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import Cookies from "js-cookie";
 
 const baseQuery = fetchBaseQuery({
-  // baseUrl: import.meta.env.VITE_BASE_URL,
-  baseUrl: "https://authenticationappbackend-production.up.railway.app",
+  baseUrl: import.meta.env.VITE_BASE_URL,
+  // baseUrl: "https://authenticationappbackend-production.up.railway.app",
   credentials: "include",
   prepareHeaders: (headers) => {
     const token = Cookies.get("accessToken");
