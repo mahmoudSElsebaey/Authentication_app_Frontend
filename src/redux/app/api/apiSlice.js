@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 
 const baseQuery = fetchBaseQuery({
   baseUrl: import.meta.env.VITE_BASE_URL,
-  // baseUrl: "https://authenticationappbackend-production.up.railway.app",
   credentials: "include",
   prepareHeaders: (headers) => {
     const token = Cookies.get("accessToken");
@@ -20,7 +19,7 @@ const baseQueryWithReauth = async (args, api, extraOptions) => {
   let result = await baseQuery(args, api, extraOptions);
   if (result?.error?.status === 403) {
     console.log("Sending Refresh Token");
-    const refreshResult = await baseQuery("auth/refresh", api, extraOptions);
+    const refreshResult = await baseQuery("/auth/refresh", api, extraOptions);
 
     if (refreshResult?.data) {
       const accessToken = refreshResult.data.accessToken;

@@ -6,3 +6,4 @@ export const RequireAuth = ({ children }) => {
 
   return accessToken ? children : <Navigate to="/auth/login" replace />;
 };
+
